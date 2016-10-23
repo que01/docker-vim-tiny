@@ -3,8 +3,8 @@ FROM alpine
 MAINTAINER que01 <que01@foxmail.com>
 
 ENV TERM=xterm-256color
-ENV VIM_VERSION 7.0232
-ENV VIM_DIR 74
+ENV VIM_VERSION 8.0.0046
+ENV VIM_DIR 80
 
 RUN apk --update add zsh python python-dev nodejs zsh ctags git ncurses-terminfo curl \
     libsm libice libxt libx11 ncurses                                                 && \
@@ -12,7 +12,7 @@ RUN apk --update add zsh python python-dev nodejs zsh ctags git ncurses-terminfo
         libx11-dev libxt-dev ncurses-dev   bash llvm perl cmake                       && \
     cd /tmp                                                                           && \
     git clone https://github.com/vim/vim                                              && \
-    cd /tmp/vim && git checkout $VIM_VERSION                                          && \
+    cd /tmp/vim && git checkout v$VIM_VERSION                                          && \
     ./configure --with-features=big \
                 #needed for editing text in languages which have many characters
                 --enable-multibyte \
