@@ -28,7 +28,7 @@ RUN apk --update add zsh python python-dev nodejs zsh ctags git ncurses-terminfo
     rm -rf /usr/share/man/* /usr/share/icons/* /usr/share/doc/* /tmp/* \
       /var/cache/* /var/log/* /var/tmp/*                                       && \
     mkdir /var/cache/apk                                                       && \
-    cd /usr/share/vim/vim74/                                                   && \
+    cd /usr/share/vim/vim$VIM_DIR                                              && \
     rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim                 && \
     find . -name *.txt                                                         && \
 git clone https://github.com/que01/vimrc ~/.vim_runtime && cd ~/.vim_runtime                           && \
